@@ -26,7 +26,10 @@ public class Create extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_stuff);
-        d = new DatabaseHelper(getApplicationContext());
+
+        getSupportActionBar().setTitle("Add/Edit Location"); //set title
+
+        d = new DatabaseHelper(getApplicationContext()); //get database
         //get edit texts
         address = (EditText) findViewById(R.id.address);
         latitude = (EditText) findViewById(R.id.latitude);

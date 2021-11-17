@@ -1,6 +1,7 @@
 package com.example.assignment2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().setTitle("Location Finder"); //set title
 
         DatabaseHelper  d = new DatabaseHelper(getApplicationContext()); //get database
 
@@ -60,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
 
         //put data in adapter
         LocationAdapter adapter = new LocationAdapter(d.getDataArr());
+        
+        //decorate recycler view items
+        rView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        rView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
 
         rView.setAdapter(adapter);
 
