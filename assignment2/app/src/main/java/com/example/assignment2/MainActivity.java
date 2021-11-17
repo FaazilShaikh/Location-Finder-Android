@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         //put data in adapter
         LocationAdapter adapter = new LocationAdapter(d.getDataArr());
-        
+
         //decorate recycler view items
         rView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         rView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
@@ -85,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (adapter.getItemCount() != 0) {
-                    adapter.searchNotes(s.toString()); //search for notes
-                }
+
+                adapter.searchNotes(s.toString()); //search for notes
+
             }
 
         });
